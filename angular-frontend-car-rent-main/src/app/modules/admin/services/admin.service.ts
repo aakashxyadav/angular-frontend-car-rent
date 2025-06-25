@@ -26,46 +26,46 @@ export class AdminService {
   }
 
   // function to delete car by id
-  deleteCar(id: number): Observable<any> {
-    return this.http.delete(BASE_URL + 'car/' + id, {
+  deleteCar(id : number): Observable<any> {
+    return this.http.delete(BASE_URL + 'car/' + id , {
       headers: this.createAuthorizationHeader(),
-    });
+    })
   }
 
   // function to get car by id
-  getCarById(id: number): Observable<any> {
-    return this.http.get(BASE_URL + 'car/' + id, {
+  getCarById(id : number): Observable<any> {
+    return this.http.get(BASE_URL + 'car/' + id , {
       headers: this.createAuthorizationHeader(),
-    });
+    })
   }
 
-  // function to update car
-  updateCar(carId: number, carDto: any): Observable<any> {
-    return this.http.put(BASE_URL + 'car/' + carId, carDto, {
-      headers: this.createAuthorizationHeader(),
-    });
-  }
+    // function to update car
+  updateCar(carId : number, carDto : any): Observable<any> {
+      return this.http.put(BASE_URL + 'car/' + carId , carDto , {
+        headers: this.createAuthorizationHeader(),
+      })
+    }
 
-  // function to get all bookings
+      // function to get all bookings
   getAllBookings(): Observable<any> {
     return this.http.get(BASE_URL + 'car/bookings', {
       headers: this.createAuthorizationHeader(),
     });
   }
 
-  // function to change booking status
-  changeBookingStatus(bookingId: number, status: string): Observable<any> {
-    return this.http.get(BASE_URL + `car/booking/${bookingId}/${status}`, {
-      headers: this.createAuthorizationHeader(),
-    });
-  }
+        // function to change booking status
+        changeBookingStatus(bookingId: number, status: string): Observable<any> {
+          return this.http.get(BASE_URL + `car/booking/${bookingId}/${status}`, {
+            headers: this.createAuthorizationHeader(),
+          });
+        }
 
-  // function to search car
-  search(SearchCarDto: any): Observable<any> {
-    return this.http.post(BASE_URL + 'car/search', SearchCarDto, {
-      headers: this.createAuthorizationHeader(),
-    });
-  }
+    // function to search car
+    search(SearchCarDto: any): Observable<any> {
+      return this.http.post(BASE_URL + 'car/search', SearchCarDto, {
+        headers: this.createAuthorizationHeader(),
+      });
+    }
 
   createAuthorizationHeader(): HttpHeaders {
     let authHeaders: HttpHeaders = new HttpHeaders();
